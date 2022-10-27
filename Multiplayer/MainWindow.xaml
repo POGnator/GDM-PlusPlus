@@ -20,7 +20,7 @@
         Closing="Closing_"    
     MinHeight="500" MinWidth="300"
         MaxWidth="510" SizeChanged="SizeChangedf"
-        Title="Geometry Dash Multiplayer" Height="500" Width="510"  Background="{x:Null}" MouseDown="MoveWindow" Loaded="WindowLoaded" Foreground="White" FontFamily="{DynamicResource TTNorms}" Icon="icon.ico">
+        Title="GDM++" Height="500" Width="510"  Background="{x:Null}" MouseDown="MoveWindow" Loaded="WindowLoaded" Foreground="White" FontFamily="{DynamicResource TTNorms}" Icon="icon.ico">
     <Window.Resources>
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="Black" />
@@ -225,9 +225,6 @@
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="onetimepayment">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
-            </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="border4">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="120">
                     <EasingDoubleKeyFrame.EasingFunction>
@@ -248,13 +245,6 @@
         <Storyboard x:Key="UnHoverPay">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="image">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="26">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <QuinticEase EasingMode="EaseInOut"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="onetimepayment">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.25">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <QuinticEase EasingMode="EaseInOut"/>
                     </EasingDoubleKeyFrame.EasingFunction>
@@ -567,7 +557,7 @@
                         </Grid>
                         <Grid   
                             ToolTipService.BetweenShowDelay="0" ToolTipService.InitialShowDelay="0" ToolTip="Join our development Discord server!" Width="35" MouseDown="OpenTag" Tag="https://discord.gg/gdm"  HorizontalAlignment="Right" Margin="0,3,71,0" Cursor="Hand" Background="#00000000" VerticalAlignment="Top" Height="25">
-                            <Image Source="UI/Images/Icons/icons8-discord-48 (1).png" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5" Width="25" />
+                            <Image Source="UI/Images/Icons/icons8-discord-48 (1).png" HorizontalAlignment="Center" Opacity="0.5" Width="25" />
                         </Grid>
                     </Grid>
                 </Border>
@@ -689,7 +679,7 @@
                     </DockPanel>
                     <StackPanel x:Name="stackPanel1" Background="{DynamicResource BackgroundNormal}" Margin="0,0,0,20">
                         <StackPanel Margin="10,10,10,0" VerticalAlignment="Center" Opacity="0.75">
-                            <TextBlock TextWrapping="Wrap" x:Name="textBlock1" Text="Select a Server" FontSize="18" FontFamily="{DynamicResource TTNorms-Bolds}" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <TextBlock TextWrapping="Wrap" x:Name="textBlock1" Text="Enter a server IP" FontSize="18" FontFamily="{DynamicResource TTNorms-Bolds}" VerticalAlignment="Top" Margin="10,10,0,0"/>
                             <TextBlock x:Name="serverdesc" TextWrapping="Wrap" Text="Preferably pick the nearest to your location." FontSize="14" FontFamily="{DynamicResource Avenir}" VerticalAlignment="Top" Margin="10,5,0,10" Height="32" Opacity="0.5"/>
                         </StackPanel>
                         <DockPanel  x:Name="stackPanel_Copy6" Margin="0,0,10,0" Cursor="Hand" Height="70">
@@ -710,6 +700,7 @@
                             <StackPanel DockPanel.Dock="Top" >
                             </StackPanel>
                         </DockPanel>
+                        <TextBox x:Name="IP_Box" TextWrapping="Wrap" Text="Example: serverip.com:port" Width="176" Cursor="IBeam" GotKeyboardFocus="IP_Enter"/>
                     </StackPanel>
                 </Grid>
                 <DockPanel x:Name="stackPanel2" DockPanel.Dock="Left" Margin="0,0,10,0">
@@ -1253,45 +1244,32 @@
                                     <TextBlock x:Name="desc1" Text="Change colors and custom icons!" FontFamily="{DynamicResource TTNorms}" FontSize="12"/>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="0,10,0,0" Background="{DynamicResource BackgroundLight}" CornerRadius="7" Height="50">
+                            <Border Margin="0,10,0,0" Background="{DynamicResource BackgroundLight}" CornerRadius="7" Height="59">
                                 <StackPanel Margin="20,10,20,0">
                                     <TextBlock x:Name="feature2" Text="Create private lobbies." FontFamily="{DynamicResource TTNorms-Bolds}" FontSize="14"/>
-                                    <TextBlock x:Name="desc2" Text="Yeah." TextWrapping="Wrap" FontFamily="{DynamicResource TTNorms}" FontSize="12"/>
+                                    <TextBlock x:Name="desc2" Text="This is a community project, so please host a server if you own one!" TextWrapping="Wrap" FontFamily="{DynamicResource TTNorms}" FontSize="12"/>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="0,10,0,0" Background="{DynamicResource BackgroundLight}" CornerRadius="7" Height="50">
+                            <Border Margin="0,10,0,0" Background="{DynamicResource BackgroundLight}" CornerRadius="7" Height="59">
                                 <StackPanel Margin="20,10,20,0">
                                     <TextBlock x:Name="feature3" Text="VIP Role" FontFamily="{DynamicResource TTNorms-Bolds}" FontSize="14"/>
                                     <TextBlock x:Name="desc3" Text="A super awesome role in our discord." TextWrapping="Wrap" FontFamily="{DynamicResource TTNorms}" FontSize="12"/>
                                 </StackPanel>
                             </Border>
                             <Grid  ToolTipService.InitialShowDelay="0" ToolTipService.Placement="Top" Height="40" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Border MouseDown="ConsiderVIP" Tag="https://adaf.xyz/gdm/vip.html" MouseEnter="border4_MouseEnter" MouseLeave="border4_MouseLeave" x:Name="border4" CornerRadius="7" Height="40" Background="#1F1D2E" VerticalAlignment="Center" HorizontalAlignment="Left" Width="120" Cursor="Hand">
+                                <Border MouseDown="ConsiderVIP" Tag="https://youtube.com/c/POGnator" MouseEnter="border4_MouseEnter" MouseLeave="border4_MouseLeave" x:Name="border4" CornerRadius="7" Height="40" Background="#1F1D2E" VerticalAlignment="Top" HorizontalAlignment="Left" Width="126" Cursor="Hand" Margin="0,-5,0,0">
                                     <Border.Effect>
                                         <DropShadowEffect BlurRadius="50" Opacity="0.5" ShadowDepth="0" Direction="0"/>
                                     </Border.Effect>
-                                    <Grid>
+                                    <Grid Margin="-10,0,10,0">
                                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Image x:Name="image" Source="UI/Images/Icons/icons8-paypal-48.png" Margin="0,7" Height="26" Width="26"/>
-                                            <TextBlock Text="$5.99" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="{DynamicResource TTNorms-Bolds}" FontSize="16"/>
+                                            <Image x:Name="image" Source="UI/Images/Icons/icons8-paypal-48.png" Height="38" Width="45"/>
+                                            <TextBlock Text="My YT" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="{DynamicResource TTNorms-Bolds}" FontSize="16"/>
                                         </StackPanel>
                                     </Grid>
                                 </Border>
-                                <Border MouseDown="EnterKey" CornerRadius="7" Height="40" Background="#1F1D2E" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50" Cursor="Hand">
-                                    <Border.Effect>
-                                        <DropShadowEffect BlurRadius="50" Opacity="0.5" ShadowDepth="0" Direction="0"/>
-                                    </Border.Effect>
-                                    <Grid>
-                                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Image Source="UI/Images/Icons/icons8-key-64.png" Margin="0,7" Height="26" Width="26"/>
-                                        </StackPanel>
-                                    </Grid>
-                                </Border>
-                                <TextBlock x:Name="onetimepayment" Text="one-time pay, unlimited duration" TextWrapping="Wrap" FontFamily="{DynamicResource TTNorms}" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Center" Opacity="0.25" Margin="26,45,26,-20"/>
                             </Grid>
-                            <Grid Margin="0,35,0,0">
-                                <TextBlock x:Name="continueasfree" MouseDown="CloseCost" Text="continue as a free account" TextWrapping="Wrap" FontFamily="{DynamicResource TTNorms}" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Center" Opacity="0.25" Cursor="Hand"/>
-                            </Grid>
+                            <Grid Margin="0,35,0,0"/>
                         </StackPanel>
                         <Image MouseDown="CloseCost" x:Name="image2" Source="UI/Images/Icons/icons8-delete-50.png" Width="25" Margin="0,10,10,0" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Right"/>
                     </Grid>

@@ -31,8 +31,11 @@ namespace Multiplayer.GDM
         {
             this.Main = _main;
             // check from old versions
-            LoadUserPrefs();
+            /*LoadUserPrefs();
             InitializeClient();
+            Note from POGnator (the modder):
+            I commented out this feature because it wants to connect to adaf's server and download
+            the latest, official version of GDM what I don't want for obvious reasons*/
 
             // load language
             GDM.Load_Language.Load();

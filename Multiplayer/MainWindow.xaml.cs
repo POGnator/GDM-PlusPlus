@@ -48,7 +48,7 @@ namespace Multiplayer
             settings.Visibility = Visibility.Visible;
             border6.Opacity = 0;
 
-            vinfo.Text = "public release " + assemblyMetadata.Version.ToString("0.00") + "-main";
+            vinfo.Text = "private mod " + assemblyMetadata.Version.ToString("0.00") + "-main";
 
             GDM.Globals.Global_Data.Main = this;
 
@@ -577,6 +577,15 @@ namespace Multiplayer
         {
             var control = sender as FrameworkElement;
             SetLang(control.Tag.ToString());
+        }
+
+
+        private void IP_Enter(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (IP_Box.Text == "Example: serverip.com:port")
+            {
+                IP_Box.Text = "";
+            }
         }
     }
 }

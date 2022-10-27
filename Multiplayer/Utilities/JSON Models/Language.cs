@@ -10,7 +10,7 @@ namespace Multiplayer.Utilities.JSON_Models
     {
         public string Lang = "English";
 
-        public string SelectServer = "Select a Server";
+        public string SelectServer = "Enter a Server IP";
         public string Preferably = "Preferably pick the nearest to your location.";
         public string Europe = "North America"; // wtf
         public string Online = "Online";
@@ -37,14 +37,14 @@ namespace Multiplayer.Utilities.JSON_Models
         public string Customize = "Customize";
         public string Settings = "Settings";
 
-        public string VIPAccountFeatures = "VIP Account Features";
+        public string VIPAccountFeatures = "Welcome to GDM++!";
 
-        public string Feature1 = "Custom Animated .gif icons!";
-        public string Feature1Description = "Change username color and custom icons!";
-        public string Feature2 = "Create private lobbies.";
-        public string Feature2Description = "Yes.";
-        public string Feature3 = "VIP Role.";
-        public string Feature3Description = "VIP role in our Discord server!";
+        public string Feature1 = "I won't let GDM die!";
+        public string Feature1Description = "Playing with friends makes GD better.";
+        public string Feature2 = "We need your help!";
+        public string Feature2Description = "This is a community project, so please host a server if you own one!";
+        public string Feature3 = "This project has bugs everywhere";
+        public string Feature3Description = "Report them on Discord to POGnator#6941";
 
         public string WindowName = "Window Name";
         public string FileName = "File Name";
