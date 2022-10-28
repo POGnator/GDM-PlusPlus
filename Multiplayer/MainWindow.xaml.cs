@@ -587,5 +587,14 @@ namespace Multiplayer
                 IP_Box.Text = "";
             }
         }
+
+        private void getIP(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                GDM.Globals.Global_Data.ServerIPs[0] = IP_Box.Text;
+                Master.Announce("Click Connect to play on " + GDM.Globals.Global_Data.ServerIPs[0]);
+            }
+        }
     }
 }
